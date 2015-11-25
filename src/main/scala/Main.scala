@@ -8,7 +8,7 @@ object Main extends App with StrictLogging {
 
   val system = ActorSystem("nvidia-off")
 
-  val tickActor = system.actorOf(Props(classOf[NvidiaScourer]))
+  val nvidiaScourerActor = system.actorOf(Props(classOf[NvidiaScourer]))
   //Use system's dispatcher as ExecutionContext
   import system.dispatcher
 
@@ -16,7 +16,7 @@ object Main extends App with StrictLogging {
   val cancellable = system.scheduler.schedule(
     interval second,
     interval second,
-    tickActor,
+    nvidiaScourerActor,
     NvidiaScourer.Tick)
 
   Runtime.getRuntime.addShutdownHook(new Thread() {
