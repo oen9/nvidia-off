@@ -1,9 +1,19 @@
 # nvidia-off
 
+Simple but very "fat" temporary solution to https://github.com/Bumblebee-Project/Bumblebee/issues/699
+
 ```
 rmmod nvidia_modeset
 rmmod nvidia
 echo OFF > /proc/acpi/bbswitch
+```
+# Requirements to build
+- JDK 8
+- gradle
+
+# Build
+```
+gradle build
 ```
 
 # If your start-stop-daemon doesn't handle --no-close
