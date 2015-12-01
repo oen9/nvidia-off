@@ -18,7 +18,7 @@ gradle build
 
 # If your start-stop-daemon doesn't handle --no-close
 1. Remove --no-close from builded app (~138 line)
-2. If your editor added empty line on end of file
+2. If your editor added empty line at end of file
 ```
 perl -pe 'chomp if eof' nvidia-off-0.1.jar > nvidia-off-fixed
 chmod +x nvidia-off-fixed
