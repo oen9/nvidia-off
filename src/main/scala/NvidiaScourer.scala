@@ -31,6 +31,9 @@ class NvidiaScourer extends Actor with LazyLogging {
 
     if (0 == result) {
       logger.info("Removing modules...")
+
+      "rmmod nvidia_drm" !
+
       "rmmod nvidia_modeset" !
 
       "rmmod nvidia" !
